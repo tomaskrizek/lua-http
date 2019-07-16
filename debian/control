@@ -1,0 +1,30 @@
+Source: lua-http
+Section: interpreters
+Priority: optional
+Maintainer: Tomas Krizek <tomas.krizek@nic.cz>
+Build-Depends: debhelper (>= 9),
+               dh-lua,
+               pandoc
+Standards-Version: 3.9.8
+Homepage: https://github.com/daurnimator/lua-http
+Vcs-Git: https://github.com/tomaskrizek/lua-http
+Vcs-Browser: https://github.com/tomaskrizek/lua-http
+
+Package: lua-http
+Architecture: all
+Depends: lua-basexx (>= 0.2),
+	   lua-binaryheap,
+         lua-bit32,
+         lua-compat53 (>= 0.3),
+         lua-cqueues (>= 20161214),
+         lua-fifo,
+         lua-lpeg-patterns (>= 0.3),
+         lua-luaossl (>= 20161208),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: knot-resolver-module-http (<< 1.2.0~)
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: HTTP library for Lua
+ lua-http is an HTTP library for Lua, it supports: both client and
+ server operations, both HTTP 1 and HTTP 2.
